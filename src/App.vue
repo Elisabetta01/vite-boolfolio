@@ -2,32 +2,20 @@
 
 import axios from 'axios';
 
+import ProjectCard from './components/ProjectCard.vue';
+
 export default{
-  data(){
-    return{
-      posts: []
-    }
-  },
+  name: "App",
+  components: {
+    ProjectCard,
+  }
 
-  mounted(){
-    this.getPosts()
-  },
-
-  methods: {
-    getPosts(){
-      axios.get('http://127.0.0.1:8000/api/posts')
-        .then( res => {
-          this.posts = res.data.posts
-          console.log(res.data)
-        })
-    }
-  },
 }
 
 </script>
 
 <template>
-  <h1>Ciao mondo</h1>
+  <ProjectCard></ProjectCard>
 </template>
 
 <style lang="scss">
